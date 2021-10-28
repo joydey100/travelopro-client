@@ -1,0 +1,6 @@
+/* Banner CSS Styles */
+.banner {
+  background: url("../../images/banner.jpg") no-repeat;
+  background-size: cover;
+  padding: 100px 0;
+}
