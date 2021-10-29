@@ -1,0 +1,43 @@
+/* Testimonial CSS */
+.left-icon,
+.right-icon {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  border: 2px solid var(--main-blue);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.left-icon:hover,
+.right-icon:hover {
+  background-color: var(--main-blue);
+}
+
+.left-icon:hover i,
+.right-icon:hover i {
+  color: #fff;
+}
+
+.left-icon i,
+.right-icon i {
+  font-size: 24px;
+  color: var(--main-blue);
+}
+
+.info img {
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+.info {
+  width: 75%;
+}

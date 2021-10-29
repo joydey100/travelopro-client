@@ -27,7 +27,7 @@ const Banner = () => {
               </p>
               <button className="main-btn px-5 py-2 rounded-pill border-0 text-white fs-5">
                 {" "}
-                <i class="far fa-calendar me-2"></i>
+                <i className="far fa-calendar me-2"></i>
                 See Packages
               </button>
             </div>

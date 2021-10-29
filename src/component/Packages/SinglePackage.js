@@ -17,7 +17,7 @@ const SinglePackage = ({ img, title, desc, city, price }) => {
         <div className="package-info p-3">
           <h3 className="my-2 fw-bold text-blue"> {title} </h3>
           <p className="mt-1 mb-3"> {desc} </p>
-          <h4 className="mb-4">Price: ${price}</h4>
+          <h4 className="mb-4 text-blue">Price: ${price}</h4>
           <NavLink
             to="/"
             className="text-decoration-none main-btn text-white px-4 py-2 rounded-pill mb-3"

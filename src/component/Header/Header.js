@@ -1,19 +1,27 @@
 import React from "react";
 import { Container, Nav, Navbar } from "react-bootstrap";
+import { NavLink } from "react-router-dom";
 import "./Header.css";
 
 const Header = () => {
   return (
     <Navbar expand="lg" bg="light" className="py-3" fixed="top">
       <Container>
-        <Navbar.Brand href="#home" className="fs-4">
+        <Navbar.Brand as={NavLink} to="/" className="fs-4">
           Travelopro
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ms-auto">
-            <Nav.Link href="#home">Home</Nav.Link>
-            <Nav.Link href="#link">About</Nav.Link>
+            <Nav.Link as={NavLink} to="/">
+              Home
+            </Nav.Link>
+            <Nav.Link as={NavLink} to="/services">
+              Services
+            </Nav.Link>
+            <Nav.Link as={NavLink} to="/login">
+              LogIn
+            </Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>
