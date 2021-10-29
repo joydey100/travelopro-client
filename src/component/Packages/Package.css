@@ -1,0 +1,15 @@
+/* Packages CSS */
+.single-package-img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+}
+.package-image {
+  position: relative;
+}
+.package-image span {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  background-color: var(--main-blue);
+}

@@ -1,6 +1,20 @@
 /* Banner CSS Styles */
 .banner {
-  background: url("../../images/banner.jpg") no-repeat;
-  background-size: cover;
-  padding: 100px 0;
+  position: relative;
+  background: url("https://joydey100.github.io/jadoo/images/Decore.svg")
+    no-repeat;
+  background-position: top right;
+  padding: 150px 0;
+}
+.banner-info {
+  position: relative;
+}
+.banner-info h2 {
+  font-size: 55px;
+  line-height: 1.35;
+  font-weight: 700;
+  color: var(--main-blue);
+}
+.banner-info p {
+  line-height: 1.75;
 }

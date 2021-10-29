@@ -1,0 +1,7 @@
+footer {
+  padding-top: 60px;
+  background-color: #05031df2;
+}
+.copyright {
+  background-color: var(--main-blue);
+}

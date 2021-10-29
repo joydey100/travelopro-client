@@ -1,0 +1,25 @@
+/* Global CSS */
+
+:root {
+  --main-orange: #fd642f;
+  --main-blue: #05031d;
+}
+
+img {
+  max-width: 100%;
+  object-fit: cover;
+}
+
+.text-orange {
+  color: var(--main-orange);
+}
+.text-blue {
+  color: var(--main-blue);
+}
+section {
+  padding: 100px 0;
+}
+
+.main-btn {
+  background-color: var(--main-orange);
+}
