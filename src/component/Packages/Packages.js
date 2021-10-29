@@ -20,7 +20,7 @@ const Packages = () => {
         </div>
         <Row className="g-4">
           {packages?.map((singlepackage) => (
-            <SinglePackage key={singlepackage.key} {...singlepackage} />
+            <SinglePackage key={singlepackage._id} {...singlepackage} />
           ))}
         </Row>
       </Container>
