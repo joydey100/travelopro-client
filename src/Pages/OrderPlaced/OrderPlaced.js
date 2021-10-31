@@ -148,7 +148,7 @@ const OrderPlaced = () => {
 
               {/* Description */}
               <Form.Group className="my-3">
-                <Form.Label>Description</Form.Label>
+                <Form.Label>Address</Form.Label>
                 <Form.Control as="textarea" rows={4} required ref={descRef} />
               </Form.Group>
 
