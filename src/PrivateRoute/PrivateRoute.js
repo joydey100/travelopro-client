@@ -7,7 +7,11 @@ const PrivateRoute = ({ children, ...rest }) => {
   const { user, loading } = useAuth();
 
   if (loading) {
-    return <Loading />;
+    return (
+      <div className="mt-5 pt-5">
+        <Loading />{" "}
+      </div>
+    );
   }
 
   return (

@@ -2,7 +2,7 @@ import React from "react";
 import { Card, Col } from "react-bootstrap";
 import { NavLink } from "react-router-dom";
 
-const SinglePackage = ({ img, title, desc, city, price }) => {
+const SinglePackage = ({ _id, img, title, desc, city, price }) => {
   return (
     <Col md={4}>
       <Card className="h-100 shadow-lg">
@@ -19,7 +19,7 @@ const SinglePackage = ({ img, title, desc, city, price }) => {
           <p className="mt-1 mb-3"> {desc} </p>
           <h4 className="mb-4 text-blue">Price: ${price}</h4>
           <NavLink
-            to="/"
+            to={`/placeorder/${_id}`}
             className="text-decoration-none main-btn text-white px-4 py-2 rounded-pill mb-3"
           >
             {" "}

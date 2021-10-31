@@ -3,6 +3,7 @@ import { Container, Row } from "react-bootstrap";
 import usePackages from "../../hooks/usePackages";
 import SinglePackage from "./SinglePackage";
 import "./Package.css";
+import Loading from "../Loading/Loading";
 
 const Packages = () => {
   // Get packages from usePackages hook
@@ -19,9 +20,13 @@ const Packages = () => {
           </h2>
         </div>
         <Row className="g-4">
-          {packages?.map((singlepackage) => (
-            <SinglePackage key={singlepackage._id} {...singlepackage} />
-          ))}
+          {packages?.length > 0 ? (
+            packages?.map((singlepackage) => (
+              <SinglePackage key={singlepackage._id} {...singlepackage} />
+            ))
+          ) : (
+            <Loading />
+          )}
         </Row>
       </Container>
     </section>

@@ -9,6 +9,9 @@ import Login from "./Pages/Login/Login";
 import OrderPlaced from "./Pages/OrderPlaced/OrderPlaced";
 import AuthProvider from "./context/AuthProvider/AuthProvider";
 import PrivateRoute from "./PrivateRoute/PrivateRoute";
+import MyOrder from "./Pages/MyOrder/MyOrder";
+import ManageOrder from "./Pages/ManageOrder/ManageOrder";
+import AddEvent from "./Pages/AddEvent/AddEvent";
 
 function App() {
   return (
@@ -25,8 +28,17 @@ function App() {
           <Route exact path="/login">
             <Login />
           </Route>
-          <PrivateRoute exact path="/placeorder">
+          <PrivateRoute exact path="/placeorder/:id">
             <OrderPlaced />
+          </PrivateRoute>
+          <PrivateRoute exact path="/myorder">
+            <MyOrder />
+          </PrivateRoute>
+          <PrivateRoute exact path="/manage-orders">
+            <ManageOrder />
+          </PrivateRoute>
+          <PrivateRoute exact path="/addevent">
+            <AddEvent />
           </PrivateRoute>
         </Switch>
         <Footer />
