@@ -19,8 +19,8 @@ const MyOrder = () => {
     fetch(`https://howling-treat-27967.herokuapp.com/orderlist/${email}`)
       .then((res) => res.json())
       .then((data) => {
-        setLoading(false);
         setMyList(data);
+        setLoading(false);
       });
   }, [email, setLoading]);
 
@@ -62,7 +62,7 @@ const MyOrder = () => {
             <p> Explore Orders</p>
             <h2 className="fs-1 fw-bold text-blue mb-4">
               {" "}
-              My <span className="text-orange">Orders</span>
+              My <span className="text-orange">Bookings</span>
             </h2>
           </div>
         )}

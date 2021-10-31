@@ -1,6 +1,6 @@
 import React from "react";
-import { Container, Spinner } from "react-bootstrap";
 import { Redirect, Route } from "react-router";
+import Loading from "../component/Loading/Loading";
 import useAuth from "../hooks/useAuth";
 
 const PrivateRoute = ({ children, ...rest }) => {
@@ -8,11 +8,9 @@ const PrivateRoute = ({ children, ...rest }) => {
 
   if (loading) {
     return (
-      <section>
-        <Container className="text-center">
-          <Spinner animation="border" variant="primary" />
-        </Container>
-      </section>
+      <div className="mt-5 pt-5">
+        <Loading />{" "}
+      </div>
     );
   }
 
