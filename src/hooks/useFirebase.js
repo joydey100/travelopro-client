@@ -23,17 +23,20 @@ const useFirebase = () => {
 
   //   Google Sign In
   const googleSignIn = () => {
+    setLoading(true);
     return signInWithPopup(auth, provider);
   };
 
-  //   reamain user
+  //   Current User
   useEffect(() => {
-    onAuthStateChanged(auth, (user) => {
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
       if (user) {
         setUser(user);
-        setLoading(false);
       }
+      setLoading(false);
     });
+
+    return () => unsubscribe;
   }, [auth]);
 
   //   Log out

@@ -22,7 +22,7 @@ const MyOrder = () => {
         setLoading(false);
         setMyList(data);
       });
-  }, [email]);
+  }, [email, setLoading]);
 
   // Remove from list
   const handleRemove = (id) => {
