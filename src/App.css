@@ -34,3 +34,8 @@ section {
   object-fit: cover;
 }
 
+@media only screen and (max-width: 720px) {
+  .image-box {
+    height: auto;
+  }
+}

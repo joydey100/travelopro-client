@@ -16,7 +16,7 @@ const TourGallery = () => {
         </div>
         <Row className="g-3">
           {data.map((singleData) => (
-            <Col md={singleData.id} key={singleData.key}>
+            <Col lg={singleData.id} md={4} key={singleData.key}>
               <div className="img-card">
                 <img src={singleData.img} alt="gallery-img" />
               </div>

@@ -8,8 +8,8 @@ const Footer = () => {
     <footer className="mt-5 text-white">
       <Container>
         <Row>
-          <Col md={4}>
-            <div className="footer-info">
+          <Col lg={4} md={6}>
+            <div className="footer-info mt-3 mt-md-0">
               <h4 className="mb-3"> Travelopro </h4>
               <p className="text-light lh-lg">
                 {" "}
@@ -21,8 +21,8 @@ const Footer = () => {
           </Col>
 
           {/* Footer 2 - important links */}
-          <Col md={3}>
-            <div className="footer-info ps-3">
+          <Col lg={3} md={6}>
+            <div className="footer-info mt-3 mt-md-0 ps-lg-3">
               <h4 className="mb-3">Important Links</h4>
               <div className="contact-info">
                 <Link
@@ -54,8 +54,8 @@ const Footer = () => {
           </Col>
 
           {/* Footer 3rd */}
-          <Col md={2}>
-            <div className="footer-info">
+          <Col lg={2} md={6}>
+            <div className="footer-info mt-3 mt-md-0">
               <h4 className="mb-3">Social Media</h4>
               <div className="contact-info">
                 <Link
@@ -87,8 +87,8 @@ const Footer = () => {
           </Col>
 
           {/* Footer 4th */}
-          <Col md={3}>
-            <div className="footer-info">
+          <Col lg={3} md={6}>
+            <div className="footer-info mt-3 mt-md-0">
               <h4 className="mb-3"> Contact Information </h4>
               <p className="text-light mb-3">
                 {" "}

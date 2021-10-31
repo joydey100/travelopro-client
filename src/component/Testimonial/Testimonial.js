@@ -44,7 +44,7 @@ const Testimonial = () => {
           </h2>
         </div>
         <Row>
-          <Col md={7} className="mx-auto">
+          <Col lg={7} md={11} className="mx-auto">
             <Card className="shadow p-5 d-flex align-items-center justify-content-between flex-row">
               <div className="left-icon" onClick={() => handleChange("minus")}>
                 <i className="fas fa-chevron-left"></i>

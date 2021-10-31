@@ -2,13 +2,14 @@ import React from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import "./Banner.css";
 import bannerImg from "../../images/banner.png";
+import { NavLink } from "react-router-dom";
 
 const Banner = () => {
   return (
     <section className="banner">
       <Container>
         <Row>
-          <Col md={6} className="d-flex align-items-center">
+          <Col lg={6} className="d-flex align-items-center">
             <div className="banner-info">
               <h2 className="fw-bold">
                 {" "}
@@ -25,14 +26,17 @@ const Banner = () => {
                 Maldives, RSA, UK, Norway, Iceland, Germany, Japan, China,
                 Turkey, Quatar, and so on.
               </p>
-              <button className="main-btn px-5 py-2 rounded-pill border-0 text-white fs-5">
+              <NavLink
+                to="/services"
+                className="main-btn px-5 text-decoration-none py-2 rounded-pill border-0 text-white fs-5"
+              >
                 {" "}
                 <i className="far fa-calendar me-2"></i>
                 See Packages
-              </button>
+              </NavLink>
             </div>
           </Col>
-          <Col md={6}>
+          <Col lg={6} className="mt-5 mt-lg-0">
             <img src={bannerImg} alt="bannerImg" />
           </Col>
         </Row>

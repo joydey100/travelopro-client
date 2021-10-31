@@ -60,7 +60,7 @@ const AddEvent = () => {
         <Form className="mt-5" onSubmit={handleNewEvent}>
           <Row className="g-4">
             {/* left Side */}
-            <Col md={6} className="mx-md-auto border-end-3">
+            <Col lg={6}>
               <Form.Group className="mb-3">
                 <Form.Label>Package Title</Form.Label>
                 <Form.Control
@@ -83,7 +83,7 @@ const AddEvent = () => {
               </Form.Group>
             </Col>
 
-            <Col md={6}>
+            <Col lg={6}>
               {/* Add city */}
               <Form.Group className="mb-3">
                 <Form.Label>City</Form.Label>

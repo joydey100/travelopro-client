@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom";
 
 const SinglePackage = ({ _id, img, title, desc, city, price }) => {
   return (
-    <Col md={4}>
+    <Col lg={4} md={6}>
       <Card className="h-100 shadow-lg">
         <div className="package-image">
           <img
