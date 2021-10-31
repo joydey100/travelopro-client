@@ -1,9 +1,10 @@
 import React from "react";
 import { Col, Button } from "react-bootstrap";
+import { Link, NavLink } from "react-router-dom";
 
-const SingleMyList = ({ title, date, img, myDesc, _id }) => {
-  // remove pakcage
-  const removePackage = (id) => {};
+const SingleMyList = (props) => {
+  // Destructuring
+  const { title, date, img, myDesc, _id, status } = props.list;
 
   return (
     <Col lg={4} md={6}>
@@ -15,11 +16,32 @@ const SingleMyList = ({ title, date, img, myDesc, _id }) => {
           <div>
             <h4 className="my-3 fw-bold text-blue"> {title} </h4>
             <h5 className="mb-4"> {date} </h5>
-            <p className="mb-5 text-secondary"> {myDesc} </p>
+            <p className="mb-4 fw-bold">
+              {" "}
+              Status:{" "}
+              <span
+                className={
+                  status === "Pending" ? "text-orange" : "text-success"
+                }
+              >
+                {" "}
+                {status}
+              </span>{" "}
+            </p>
+            <p className="mb-4 text-secondary"> {myDesc} </p>
+            <Button variant="primary" className="my-3">
+              <NavLink
+                to="/manage-orders"
+                className="text-white text-decoration-none"
+              >
+                {" "}
+                Manage Orders
+              </NavLink>
+            </Button>
             <Button
               variant="danger"
-              className="my-3"
-              onClick={() => removePackage(_id)}
+              className="my-3 ms-3"
+              onClick={() => props.handleRemove(_id)}
             >
               {" "}
               Remove{" "}

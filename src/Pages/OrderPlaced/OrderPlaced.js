@@ -19,7 +19,7 @@ const OrderPlaced = () => {
 
   // get package info
   useEffect(() => {
-    fetch(`http://localhost:5000/packages/${id}`)
+    fetch(`https://howling-treat-27967.herokuapp.com/packages/${id}`)
       .then((res) => res.json())
       .then((data) => setSinglePackage(data));
   }, [id]);
@@ -43,7 +43,7 @@ const OrderPlaced = () => {
     };
 
     // post to Database
-    fetch("http://localhost:5000/orderlist", {
+    fetch("https://howling-treat-27967.herokuapp.com/orderlist", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -58,6 +58,11 @@ const OrderPlaced = () => {
           icon: "success",
           confirmButtonColor: "#FD642F",
         });
+
+        // load after 1 second [for update data after post]
+        setTimeout(function () {
+          window.location.reload();
+        }, 1000);
       });
 
     // clear value

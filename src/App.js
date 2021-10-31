@@ -12,6 +12,7 @@ import PrivateRoute from "./PrivateRoute/PrivateRoute";
 import MyOrder from "./Pages/MyOrder/MyOrder";
 import ManageOrder from "./Pages/ManageOrder/ManageOrder";
 import AddEvent from "./Pages/AddEvent/AddEvent";
+import NotFound from "./Pages/NotFound/NotFound";
 
 function App() {
   return (
@@ -40,6 +41,9 @@ function App() {
           <PrivateRoute exact path="/addevent">
             <AddEvent />
           </PrivateRoute>
+          <Route exact path="*">
+            <NotFound />
+          </Route>
         </Switch>
         <Footer />
       </Router>

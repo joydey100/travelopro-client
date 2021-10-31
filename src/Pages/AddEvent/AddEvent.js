@@ -21,7 +21,7 @@ const AddEvent = () => {
     e.preventDefault();
 
     // Post Data
-    fetch("http://localhost:5000/packages", {
+    fetch("https://howling-treat-27967.herokuapp.com/packages", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -29,14 +29,19 @@ const AddEvent = () => {
       body: JSON.stringify(info),
     })
       .then((res) => res.json())
-      .then((data) =>
+      .then((data) => {
         Swal.fire({
           title: "Great Job",
           text: "You Created a Package Successfully",
           icon: "success",
           confirmButtonColor: "#FD642F",
-        })
-      );
+        });
+
+        // load after 1 second [for update data after post]
+        setTimeout(function () {
+          window.location.reload();
+        }, 1000);
+      });
 
     //   push to service
     history.push("/services");

@@ -3,6 +3,7 @@ import { Container, Row, Button } from "react-bootstrap";
 import { useHistory } from "react-router";
 import useAuth from "../../hooks/useAuth";
 import SingleMyList from "./SingleMyList";
+import Swal from "sweetalert2";
 
 const MyOrder = () => {
   // My Data State
@@ -10,15 +11,48 @@ const MyOrder = () => {
   const history = useHistory();
 
   // get user
-  const { user } = useAuth();
+  const { user, setLoading } = useAuth();
   const { email } = user;
 
   //   get data by user email
   useEffect(() => {
-    fetch(`http://localhost:5000/orderlist/${email}`)
+    fetch(`https://howling-treat-27967.herokuapp.com/orderlist/${email}`)
       .then((res) => res.json())
-      .then((data) => setMyList(data));
+      .then((data) => {
+        setLoading(false);
+        setMyList(data);
+      });
   }, [email]);
+
+  // Remove from list
+  const handleRemove = (id) => {
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        fetch(`https://howling-treat-27967.herokuapp.com/lists/${id}`, {
+          method: "DELETE",
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            const filterData = myList?.filter((order) => order._id !== id);
+            setMyList(filterData);
+          });
+        Swal.fire({
+          title: "Deleted!",
+          text: "Your file has been deleted.",
+          icon: "success",
+          confirmButtonColor: "#FD642F",
+        });
+      }
+    });
+  };
 
   return (
     <section>
@@ -34,7 +68,13 @@ const MyOrder = () => {
         )}
         <Row className="g-4">
           {myList.length > 0 ? (
-            myList.map((list) => <SingleMyList key={list._id} {...list} />)
+            myList.map((list) => (
+              <SingleMyList
+                key={list._id}
+                list={list}
+                handleRemove={handleRemove}
+              />
+            ))
           ) : (
             <section className="text-center">
               <h2 className="text-center mt-3 text-blue">

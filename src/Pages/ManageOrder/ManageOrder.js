@@ -10,7 +10,7 @@ const ManageOrder = () => {
 
   // Get All Orders
   useEffect(() => {
-    fetch("http://localhost:5000/orderlist")
+    fetch("https://howling-treat-27967.herokuapp.com/orderlist")
       .then((res) => res.json())
       .then((data) => setAllOrders(data));
   }, []);
@@ -19,22 +19,33 @@ const ManageOrder = () => {
   const handleApprove = (id) => {
     const getOrder = allOrders.find((order) => order._id === id);
     getOrder.status = "Approved";
-    console.log(getOrder);
 
-    fetch(`http://localhost:5000/status/${id}`, {
-      method: "PUT",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify(getOrder),
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        if (data.modifiedCount > 0) {
-          window.location.reload();
-          console.log("modified", data);
-        }
-      });
+    // Confirmation for Approve
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You want to Approve this package",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, Approve it!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        fetch(`https://howling-treat-27967.herokuapp.com/status/${id}`, {
+          method: "PUT",
+          headers: {
+            "content-type": "application/json",
+          },
+          body: JSON.stringify(getOrder),
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            if (data.modifiedCount > 0) {
+              window.location.reload();
+            }
+          });
+      }
+    });
   };
 
   // Remove from list
@@ -44,12 +55,12 @@ const ManageOrder = () => {
       text: "You won't be able to revert this!",
       icon: "warning",
       showCancelButton: true,
-      confirmButtonColor: "#3085d6",
-      cancelButtonColor: "#d33",
+      confirmButtonColor: "#d33",
+      cancelButtonColor: "#3085d6",
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/lists/${id}`, {
+        fetch(`https://howling-treat-27967.herokuapp.com/lists/${id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())
