@@ -8,6 +8,7 @@ const Footer = () => {
     <footer className="mt-5 text-white">
       <Container>
         <Row>
+          {/* Footer 1  */}
           <Col lg={4} md={6}>
             <div className="footer-info mt-3 mt-md-0">
               <h4 className="mb-3"> Travelopro </h4>
@@ -53,7 +54,7 @@ const Footer = () => {
             </div>
           </Col>
 
-          {/* Footer 3rd */}
+          {/* Footer 3 */}
           <Col lg={2} md={6}>
             <div className="footer-info mt-3 mt-md-0">
               <h4 className="mb-3">Social Media</h4>
@@ -86,7 +87,7 @@ const Footer = () => {
             </div>
           </Col>
 
-          {/* Footer 4th */}
+          {/* Footer 4 */}
           <Col lg={3} md={6}>
             <div className="footer-info mt-3 mt-md-0">
               <h4 className="mb-3"> Contact Information </h4>

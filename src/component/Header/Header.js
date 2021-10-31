@@ -1,7 +1,6 @@
 import React from "react";
 import { Container, Nav, Navbar } from "react-bootstrap";
 import { NavLink } from "react-router-dom";
-import "./Header.css";
 import useAuth from "../../hooks/useAuth";
 
 const Header = () => {
@@ -24,6 +23,7 @@ const Header = () => {
               Services
             </Nav.Link>
 
+            {/* ------- Conditional Rendering for Login Users ----------------- */}
             {user.email && (
               <Nav.Link as={NavLink} to="/manage-orders">
                 Manage Orders

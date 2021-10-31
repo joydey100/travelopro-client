@@ -6,7 +6,7 @@ import "./Login.css";
 
 const Login = () => {
   // get firebase hook
-  const { googleSignIn, setLoading, setUser, setError } = useAuth();
+  const { googleSignIn, setLoading, setUser, setError, error } = useAuth();
 
   // history and loaction for redirect
   const history = useHistory();
@@ -23,7 +23,6 @@ const Login = () => {
         const user = result.user;
         setUser(user);
         history.push(redirect);
-        console.log(user);
       })
       .catch((error) => {
         setLoading(false);
@@ -49,6 +48,9 @@ const Login = () => {
                 Button. We will take only your essential information for future
                 reference.
               </p>
+
+              <p className="text-danger my-2">{error}</p>
+
               <button
                 className="py-2 rounded-pill mb-4"
                 onClick={handleGoogleSignIn}

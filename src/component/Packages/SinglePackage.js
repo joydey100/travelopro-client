@@ -23,7 +23,7 @@ const SinglePackage = ({ _id, img, title, desc, city, price }) => {
             className="text-decoration-none main-btn text-white px-4 py-2 rounded-pill mb-3"
           >
             {" "}
-            Book Now{" "}
+            Book Now <i className="fas fa-paper-plane ms-1"></i>
           </NavLink>
         </div>
       </Card>

@@ -10,6 +10,7 @@ const Testimonial = () => {
   // Destructuring
   const { name, job, img, text } = reviews[index];
 
+  // Checking Numbers
   const checkNumber = (number) => {
     if (number > reviews.length - 1) {
       return 0;
@@ -19,6 +20,8 @@ const Testimonial = () => {
     }
     return number;
   };
+
+  // Function for clicking left and right arrow
   const handleChange = (isPlus) => {
     if (isPlus === "plus") {
       setIndex((index) => {

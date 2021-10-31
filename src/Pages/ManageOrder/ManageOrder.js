@@ -4,6 +4,7 @@ import { useHistory } from "react-router";
 import Swal from "sweetalert2";
 
 const ManageOrder = () => {
+  // Essential States
   const [allOrders, setAllOrders] = useState([]);
 
   const history = useHistory();
